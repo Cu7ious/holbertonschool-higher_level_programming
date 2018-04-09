@@ -9,4 +9,5 @@
 5-print_string.py	prints 3 times a string stored in the variable str, followed by its first 9 characters
 6-concat.py		prints the result of concatenation of 2 strings
 7-edges.py		prints the intervals of the string
+8-concat_edges.py	prints 3 intervals of the string, concatenated into one
 ```
