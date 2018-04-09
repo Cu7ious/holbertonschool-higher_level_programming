@@ -11,4 +11,5 @@
 7-edges.py		prints the intervals of the string
 8-concat_edges.py	prints 3 intervals of the string, concatenated into one
 9-easter_egg.py		prints “The Zen of Python”, by TimPeters, followed by a new line
+100-write.py		prints the string using write system call, exits with 1
 ```
