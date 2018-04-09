@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "Compiling main.py ..." && py3compile "$PYFILE" && mv __pycache__/*.pyc "$PYFILE"c && rm -rf __pycache__
