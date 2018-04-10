@@ -4,4 +4,6 @@ Summary
 ```
 0-positive_or_negative.py	prints different statements depending on generated random number
 1-last_digit.py			prints different statements depending on generated random number
+
+8-uppercase.py			prints a given string in uppercase
 ```
