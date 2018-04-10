@@ -12,9 +12,12 @@ int check_cycle(listint_t *list)
 	listint_t *head_ptr = list;
 	unsigned int count = 0;
 
+	if (list == NULL)
+		return (0);
+
 	while (current != NULL)
 	{
-		if (count > 0 && head_ptr == current)
+		if (head_ptr == current && count > 0)
 			return (1);
 
 		current = current->next;
