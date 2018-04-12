@@ -12,5 +12,5 @@ def print_calcs():
     print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
 
-if __name__ == "main":
+if __name__ == "__main__":
     print_calcs()
