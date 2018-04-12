@@ -2,13 +2,9 @@
 if __name__ == "__main__":
     from sys import argv
 
-    c = 0
     result = 0
 
-    for arg in argv:
-        if c is not 0:
-            result += int(arg)
+    for i in range(1, len(argv)):
+        result += int(argv[i])
 
-        c += 1
-
-    print("{}".format(result));
+    print("{:d}".format(result));
