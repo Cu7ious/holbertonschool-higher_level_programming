@@ -8,4 +8,5 @@ Summary
 3-common_elements.py		"""Returns a set of common elements in two sets."""
 4-only_diff_elements.py		"""Returns a set of all elements present in only one set."""
 5-number_keys.py		"""Returns the number of keys in a dictionary."""
+6-print_sorted_dictionary.py	"""Prints a dictionary by ordered keys."""
 ```
