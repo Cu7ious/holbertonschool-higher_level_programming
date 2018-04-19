@@ -2,6 +2,8 @@
 
 
 def uniq_add(my_list=[]):
+    """Makes the addition of all unique integers in a list
+        (only one time each integer)."""
 
     result = 0
     uniq = set(my_list)
