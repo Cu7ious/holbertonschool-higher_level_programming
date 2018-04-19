@@ -15,4 +15,5 @@ Summary
 10-add.py			adds two integers and returns the result
 11-pow.py			computes a to the power of b and return the value
 12-fizzbuzz.py			numbers from 1 to 100 separated by a space and FizzBuzz
+13-insert_number.c, lists.h	inserts a number into a sorted singly linked list
 ```
