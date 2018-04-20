@@ -10,4 +10,6 @@ Summary
 5-number_keys.py		"""Returns the number of keys in a dictionary."""
 6-print_sorted_dictionary.py	"""Prints a dictionary by ordered keys."""
 7-update_dictionary.py		"""Replaces or adds key:value in/to a dictionary."""
+8-simple_delete.py		"""Deletes a key in a dictionary."""
+
 ```
