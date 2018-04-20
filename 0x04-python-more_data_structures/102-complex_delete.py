@@ -2,6 +2,7 @@
 
 
 def complex_delete(a_dictionary, value):
+    """Deletes keys with a specific value in a dictionary."""
 
     if (value in a_dictionary.values() is False):
         return a_dictionary
