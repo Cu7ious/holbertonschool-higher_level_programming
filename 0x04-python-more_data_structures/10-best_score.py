@@ -7,12 +7,4 @@ def best_score(a_dictionary):
     if isinstance(a_dictionary, dict) is False:
         return None
 
-    key = ""
-    score = 0
-
-    for k, v in a_dictionary.items():
-        if score <= v:
-            key = k
-            score = v
-
-    return key
+    return max(a_dictionary)
