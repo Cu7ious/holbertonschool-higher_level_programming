@@ -11,5 +11,5 @@ Summary
 6-print_sorted_dictionary.py	"""Prints a dictionary by ordered keys."""
 7-update_dictionary.py		"""Replaces or adds key:value in/to a dictionary."""
 8-simple_delete.py		"""Deletes a key in a dictionary."""
-
+9-multiply_by_2.py		"""Returns a new dictionary with all values multiplied by 2."""
 ```
