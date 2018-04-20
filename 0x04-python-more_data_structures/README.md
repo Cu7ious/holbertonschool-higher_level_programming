@@ -12,4 +12,5 @@ Summary
 7-update_dictionary.py		"""Replaces or adds key:value in/to a dictionary."""
 8-simple_delete.py		"""Deletes a key in a dictionary."""
 9-multiply_by_2.py		"""Returns a new dictionary with all values multiplied by 2."""
+10-best_score.py		"""Returns a key with the biggest integer value."""
 ```
