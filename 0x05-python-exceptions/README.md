@@ -10,4 +10,5 @@
 5-raise_exception.py		"""Raises a type exception."""
 6-raise_exception_msg.py	"""Raises a name exception with a message."""
 100-safe_print_integer_err.py	"""Prints an integer."""
+101-safe_function.py		"""Executes a function safely."""
 ```
