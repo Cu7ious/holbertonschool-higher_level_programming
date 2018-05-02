@@ -72,7 +72,7 @@ class Square:
         Returns:
             The area of the Square.
         """
-        return self.size * self.size
+        return self.size ** 2
 
     def my_print(self):
         """Prints the square with the character #, padded with spaces."""
@@ -80,7 +80,7 @@ class Square:
             print()
         else:
             for j in range(0, self.position[1]):
-                print(" " * (self.position[0] + self.size))
+                print()
 
             for i in range(0, self.size):
                 print(" " * self.position[0] + "#" * self.size)
