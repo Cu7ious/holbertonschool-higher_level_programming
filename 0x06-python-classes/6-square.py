@@ -56,7 +56,7 @@ class Square:
             print()
         else:
             for j in range(0, self.position[1]):
-                print("{:s}".format(" " * (self.position[0] + self.size)))
+                print(" " * (self.position[0] + self.size))
 
             for i in range(0, self.size):
-                print("{:s}".format(" " * self.position[0] + "#" * self.size))
+                print(" " * self.position[0] + "#" * self.size)
