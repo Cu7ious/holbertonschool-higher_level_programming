@@ -6,36 +6,31 @@ class Square:
     """The class that defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Constructor of the Square class"""
+        """Initializer function for a Square.
 
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
-        if not isinstance(position, tuple) or len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-        pos0 = position[0]
-        pos1 = position[1]
-        if not isinstance(pos0, int) or not isinstance(pos1, int):
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-        if position[0] < 0 or position[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-
+        Args:
+            size (int): Size of the Square.
+            position (tuple): Position of the Square.
+        """
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """The __size getter"""
+        """ Gets private __size attribute.
+
+        Returns:
+            The size of the square
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """The __size setter"""
+        """Sets a new value for __size attribute.
+
+        Args:
+            value (int): The value of the new size.
+        """
         if isinstance(value, int) is not True:
             raise TypeError("size must be an integer")
 
@@ -44,18 +39,22 @@ class Square:
 
         self.__size = value
 
-    def area(self):
-        """Returns the size of the square"""
-        return self.__size ** 2
-
     @property
     def position(self):
-        """The __position getter"""
+        """Gets private __position attribute.
+
+        Returns:
+            The position of the Square.
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
-        """The __position setter"""
+        """Sets the value for the __position attribute.
+
+        Args:
+            value (int): The value of the new position.
+        """
         if isinstance(value, tuple) is False or len(value) is not 2:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -67,9 +66,16 @@ class Square:
 
         self.__position = value
 
+    def area(self):
+        """Calculates the area of the Square.
+
+        Returns:
+            The area of the Square.
+        """
+        return self.size * self.size
+
     def my_print(self):
-        """Prints the square with the character #, padded with spaces
-        into the stdout."""
+        """Prints the square with the character #, padded with spaces."""
         if self.size is 0:
             print()
         else:
