@@ -14,22 +14,58 @@ class Square:
         """
         self.size = size
 
-    def __lt__(self, other): # For x < y
+    def __lt__(self, other):
+        """Less Than Comparator, x < y
+
+        Args:
+            size (Square): Current intstance of the Class
+            other (Square): Other intstance of the Class
+        """
         return self.size < other.size
 
-    def __le__(self, other): # For x <= y
+    def __le__(self, other):
+        """Less Than or Equal To Comparator, x <= y
+
+        Args:
+            size (Square): Current intstance of the Class
+            other (Square): Other intstance of the Class
+        """
         return self.size <= other.size
 
-    def __eq__(self, other): # For x == y
+    def __eq__(self, other):
+        """Is Equal Comparator
+
+        Args:
+            size (Square): Current intstance of the Class
+            other (Square): Other intstance of the Class
+        """
         return self.size is other.size
 
-    def __ne__(self, other): # For x != y OR x <> y
+    def __ne__(self, other):
+        """Is Not Equal Comparator, x != y
+
+        Args:
+            size (Square): Current intstance of the Class
+            other (Square): Other intstance of the Class
+        """
         return self.size is not other.size
 
-    def __gt__(self, other): # For x > y
+    def __gt__(self, other):
+        """Greater Than Comparator, x > y
+
+        Args:
+            size (Square): Current intstance of the Class
+            other (Square): Other intstance of the Class
+        """
         return self.size > other.size
 
-    def __ge__(self, other): # For x >= y
+    def __ge__(self, other):
+        """Greater Than or Equal To Comparator, x >= y
+
+        Args:
+            size (Square): Current intstance of the Class
+            other (Square): Other intstance of the Class
+        """
         return self.size >= other.size
 
     @property
