@@ -1,0 +1,39 @@
+The `add_integer` module
+========================
+
+Usage of the `add_integer` function
+-----------------------------------
+
+1. Import should work
+>>> add_integer = __import__('0-add_integer').add_integer
+
+2. It should correctly add two positive integers
+>>> add_integer(2, 2)
+4
+
+3. It should correctly add two floats as the integers
+>>> add_integer(2.1, 2.2)
+4
+
+4. It should correctly add two negative integers
+>>> add_integer(-2, -2)
+-4
+
+5. It should raise the TypeError when 1st arg is not int or float
+>>> add_integer("2", 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+6. It should raise the TypeError when 2nd arg is not int or float
+>>> add_integer(2, "2")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+7. It should raise the TypeError when called without arguments
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+8. It should work with only one argument (int/float)
+>>> add_integer(2)
+100
