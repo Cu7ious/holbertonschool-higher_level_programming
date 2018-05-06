@@ -1,0 +1,21 @@
+The `say_my_name` module
+========================
+
+Usage of the `say_my_name` function
+--------------------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Bobby", "Yang")
+My name is Bobby Yang
+
+>>> say_my_name("John")
+My name is John 
+
+>>> say_my_name(404, "Doe")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("", 42)
+Traceback (most recent call last):
+TypeError: last_name must be a string

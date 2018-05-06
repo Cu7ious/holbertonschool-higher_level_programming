@@ -1,0 +1,77 @@
+The `text_indentation` module
+========================
+
+Usage of the `text_indentation` function
+-----------------------------------
+
+1. Import should work
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+2. 
+>>> text_indentation("""Hello. My. Name. Is. Paul.    """)
+Hello.
+<BLANKLINE>
+My.
+<BLANKLINE>
+Name.
+<BLANKLINE>
+Is.
+<BLANKLINE>
+Paul.
+<BLANKLINE>
+
+3. 
+>>> text_indentation("""Hello. My. Name. Is. Paul    """)
+Hello.
+<BLANKLINE>
+My.
+<BLANKLINE>
+Name.
+<BLANKLINE>
+Is.
+<BLANKLINE>
+Paul    
+
+4. 
+>>> text_indentation("""""")
+<BLANKLINE>
+
+5.
+>>> text_indentation("   This is. a test.")
+This is.
+<BLANKLINE>
+a test.
+<BLANKLINE>
+
+6.
+>>> text_indentation("   This is. a test ")
+This is.
+<BLANKLINE>
+a test 
+
+7.
+>>> text_indentation("1")
+1
+
+8.
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+9.
+>>> text_indentation(("1", 2))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+10. 
+>>> text_indentation("Hello.\nWorld")
+Hello.
+<BLANKLINE>
+<BLANKLINE>
+World
+
+11.
+>>> text_indentation("Hello./nWorld")
+Hello.
+<BLANKLINE>
+/nWorld
