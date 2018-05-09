@@ -1,6 +1,6 @@
 ##!/usr/bin/python3
 """
-Say my name - say_my_name function.
+This module contains `say_my_name` function.
 Accepts: two strings, first_name & last_name
 It will print out a string with the two input strings
 Checks: type first_name & last_name is string
