@@ -22,8 +22,15 @@ class Rectangle:
         """
         result = ""
 
-        for _ in range(0, self.__height):
-            result += "{:s}\n".format(self.__width * "#")
+        if self.__height is 0 or self.__width is 0:
+            return result
+
+        for i in range(0, self.__height):
+            result += "{:s}".format(self.__width * "#")
+
+            if i + 1 is not self.__height:
+                result += "\n"
+
         return result
 
     @property
