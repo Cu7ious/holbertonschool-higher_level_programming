@@ -20,7 +20,7 @@ class Rectangle:
         """
         The `width` property getter
         """
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -40,7 +40,7 @@ class Rectangle:
         """
         The `height` property getter
         """
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
