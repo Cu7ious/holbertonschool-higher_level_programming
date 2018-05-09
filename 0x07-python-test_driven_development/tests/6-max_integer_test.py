@@ -9,7 +9,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([]), None)
 
     def test_strings_instead_of_ints(self):
-        self.assertEqual(max_integer(["K", "r", "a", "f", "t", "w"]), "erk")
+        self.assertEqual(max_integer(["K", "r", "a", "f", "t"]), "t")
 
     def test_strings_and_int(self):
         self.assertRaises(TypeError, max_integer, ["a", "b", 1])
