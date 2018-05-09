@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 """
-    This module contains `say_my_name` function.
-    Accepts: two strings, first_name & last_name
+    This module contains the say_my_name function.
+    It accepts two strings with the second string given a default string.
     It will print out a string with the two input strings
-    Checks: type first_name & last_name is string
+    Checks whether or not the inputs are strings.
 """
 
 
 def say_my_name(first_name, last_name=""):
     """
-    say_my_name: prints a message with the input names
+    say_my_name: Takes up to two input strings and printsout a message
     """
-
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
 
