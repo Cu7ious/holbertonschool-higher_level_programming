@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-def matrix_divided(matrix, div)
+This module contains `matrix_divided` function
 Accepts:
     @matrix: a simple martix
     @div: a number to divide the elements of a matrix.
