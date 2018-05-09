@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 print_square function.
 Args: `size` int
