@@ -133,4 +133,3 @@ class Rectangle:
             size: the size of a Rectangle
         """
         return cls(size, size)
-
