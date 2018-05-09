@@ -2,16 +2,31 @@
 
 
 class Rectangle:
+    """
+    Rectangle: class that defines a rectangle
+    """
     def __init__(self, width=0, height=0):
+        """
+        Constructor for the Rectangle class
+        Args:
+            width: the width of a rectangle
+            height: the height of a rectangle
+        """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        """
+        The `width` property getter
+        """
         return self.width
 
     @width.setter
     def width(self, value):
+        """
+        The `width` property setter
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
 
@@ -22,10 +37,16 @@ class Rectangle:
 
     @property
     def height(self):
+        """
+        The `height` property getter
+        """
         return self.height
 
     @height.setter
     def height(self, value):
+        """
+        The `height` property setter
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
 
