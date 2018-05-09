@@ -38,7 +38,7 @@ class Rectangle:
             return result
 
         for i in range(0, self.__height):
-            result += "{}".format(self.__width * self.print_symbol)
+            result += "{}".format(self.__width * str(self.print_symbol))
 
             if i + 1 is not self.__height:
                 result += "\n"
