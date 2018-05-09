@@ -37,3 +37,13 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 8. It should work with only one argument (int/float)
 >>> add_integer(2)
 100
+
+9. It throws the OverflowError for float
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+10. It throws the ValueError for NaN
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
