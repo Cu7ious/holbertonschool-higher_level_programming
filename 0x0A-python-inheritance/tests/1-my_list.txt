@@ -1,0 +1,23 @@
+1. It should be imported correctly
+>>> MyList = __import__('1-my_list').MyList
+
+2. It should create the empty list without errors
+>>> a = MyList()
+
+3. It should create the non-empty list without errors
+>>> a = MyList([1, 2, 3])
+
+4. It should be printed correctly
+>>> print(a)
+[1, 2, 3]
+
+5. It should create the list with negative integers correctly
+>>> a = MyList([-1, -2, -13])
+
+6. It should print the list in order that it is stored with print()
+>>> print(a)
+[-1, -2, -13]
+
+7. It should print the sorted list with print_sorted() method
+>>> a.print_sorted()
+[-13, -2, -1]
