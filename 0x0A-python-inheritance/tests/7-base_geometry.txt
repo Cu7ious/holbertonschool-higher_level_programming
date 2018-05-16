@@ -1,0 +1,41 @@
+1. It should be imported correctly
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+2. It should create the empty list without errors
+>>> a = BaseGeometry()
+>>> a = BaseGeometry('ololo')
+Traceback (most recent call last):
+TypeError: object() takes no parameters
+
+3. It should raise the Exception when .area() is called
+>>> a.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+4. It should takes no arguments to .area() method
+>>> a.area('1')
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+5. It should raise the TypeError when called with no arguments
+>>> a.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+6. It should raise the TypeError when called with more than 2 arguments
+>>> a.integer_validator('1' , 2 ,3)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+7. It should raise the TypeError when value is not an int
+>>> a.integer_validator('Lol', 'troll')
+Traceback (most recent call last):
+TypeError: Lol must be an integer
+
+8. It should raise the ValueError when value <= 0
+>>> a.integer_validator('Lol', 0)
+Traceback (most recent call last):
+ValueError: Lol must be greater than 0
+
+9. Is should silently work when all arguments are correct
+>>> a.integer_validator('Lol', 1)
