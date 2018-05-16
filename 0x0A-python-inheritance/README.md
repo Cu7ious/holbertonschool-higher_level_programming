@@ -12,8 +12,8 @@ Summary
 6-base_geometry.py	the empty class with one public method
 7-base_geometry.py	the empty class with 2 python3 methods
 8-rectangle.py		the inherited class
-9-rectangle.py		the rectangle with the area() method
-
+9-rectangle.py		the Rectangle with the area() method
+10-square.py		the Square class
 ```
 
 ##### Snippet to use the tests
