@@ -15,6 +15,7 @@ Summary
 9-rectangle.py		the Rectangle with the area() method
 10-square.py		the Square class
 11-square.py		the Square class
+100-my_int.py		the int class, that has == and != operators inverted (overloaded)
 ```
 
 ##### Snippet to use the tests
