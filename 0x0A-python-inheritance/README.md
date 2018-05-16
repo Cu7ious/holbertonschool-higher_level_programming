@@ -14,6 +14,7 @@ Summary
 8-rectangle.py		the inherited class
 9-rectangle.py		the Rectangle with the area() method
 10-square.py		the Square class
+11-square.py		the Square class
 ```
 
 ##### Snippet to use the tests
