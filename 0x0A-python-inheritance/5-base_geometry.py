@@ -3,5 +3,6 @@
 Module contains the `BaseGeometry` class
 """
 
+
 class BaseGeometry():
     pass
