@@ -4,7 +4,7 @@ Summary
 
 ```
 0-read_file.py		# reads a text file (UTF8) and prints it to stdout
-10-class_to_json.py
+10-class_to_json.py	# returns the number of lines of a text file
 11-student.py
 12-student.py
 13-student.py
