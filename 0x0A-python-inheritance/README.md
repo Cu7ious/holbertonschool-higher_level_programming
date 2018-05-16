@@ -11,6 +11,7 @@ Summary
 5-base_geometry.py	the empty class
 6-base_geometry.py	the empty class with one public method
 7-base_geometry.py	the empty class with 2 python3 methods
+8-rectangle.py		the inherited class
 ```
 
 ##### Snippet to use the tests
