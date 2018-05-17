@@ -42,8 +42,6 @@ class Student:
         Args:
             json (dict): a dict with new attributes
         """
-        result = {}
-
         for key, val in json.items():
             if key in self.__dict__:
                 self.__dict__[key] = val
