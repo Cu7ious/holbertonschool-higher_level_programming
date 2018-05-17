@@ -10,8 +10,8 @@ def write_file(filename="", text=""):
     the number of characters written
 
     Args:
-        filename: the path to file to read+print
-        nb_lines: number of lines to read
+        filename: the path to file to write to
+        text: a text to write
     """
     with open(filename, mode="w", encoding="utf-8") as a_file:
         return a_file.write(text)
