@@ -106,3 +106,6 @@ venv.bak/
 # misc
 my_first_file.txt
 file_append.txt
+my_dict.json
+my_list.json
+my_set.json

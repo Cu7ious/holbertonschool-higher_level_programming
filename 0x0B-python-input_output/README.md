@@ -11,6 +11,7 @@ Summary
 			 # and returns the number of characters added
 5-to_json_string.py	 # returns the JSON representation of an object (string)
 6-from_json_string.py	 # returns an object (Python data structure) represented by a JSON string
+7-save_to_json_file.py	 # writes an Object to a text file, using a JSON representation
 8-load_from_json_file.py #
 9-add_item.py		 #
 10-class_to_json.py	 #
