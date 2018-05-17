@@ -13,4 +13,4 @@ try:
     l = load_from_json_file(f)
     save_to_json_file(l + argv[1:], f)
 except:
-    save_to_json_file([], f)
+    save_to_json_file([] + argv[1:], f)
