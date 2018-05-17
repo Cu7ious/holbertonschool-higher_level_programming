@@ -13,5 +13,5 @@ if __name__ == "__main__":
     try:
         l = load_from_json_file(f)
         save_to_json_file(l + argv[1:], f)
-    except FileNotFoundError:
+    except:
         save_to_json_file([], f)
