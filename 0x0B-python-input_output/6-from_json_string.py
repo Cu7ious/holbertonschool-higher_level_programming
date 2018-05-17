@@ -13,4 +13,5 @@ def from_json_string(my_str):
     Args:
         my_str: an object to serialize
     """
+
     return json.loads(my_str)
