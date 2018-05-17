@@ -14,7 +14,8 @@ Summary
 7-save_to_json_file.py	 # writes an Object to a text file, using a JSON representation
 8-load_from_json_file.py # creates an Object from a "JSON file"
 9-add_item.py		 # a script that creates json file from arguments
-10-class_to_json.py	 #
+10-class_to_json.py	 # returns the dictionary description with simple data structure
+			   (list, dictionary, string, integer and boolean) for JSON serialization of an object
 11-student.py		 #
 12-student.py		 #
 13-student.py		 #
