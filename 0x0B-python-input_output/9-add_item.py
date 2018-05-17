@@ -10,6 +10,9 @@ A script that creates json file from arguments
 
 if __name__ == "__main__":
     f = "add_item.json"
-    l = load_from_json_file(f)
 
-    save_to_json_file(l + argv[1:], f)
+    try:
+        l = load_from_json_file(f)
+        save_to_json_file(l + argv[1:], f)
+    except FileNotFoundError:
+        save_to_json_file([], f)
