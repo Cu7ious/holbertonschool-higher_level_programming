@@ -9,5 +9,7 @@ A script that creates json file from arguments
 
 
 if __name__ == "__main__":
-    with open("add_item.json", mode="w", encoding="utf-8") as a_file:
-        a_file.write(json.dumps(argv[1:]))
+    f = "add_item.json"
+    l = load_from_json_file(f)
+
+    save_to_json_file(l + argv[1:], f)
