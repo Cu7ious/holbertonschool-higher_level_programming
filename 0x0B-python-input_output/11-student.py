@@ -20,4 +20,6 @@ class Student:
         self.age = age
 
     def to_json(self):
+        """ Prepers the instance for JSON serialization
+        """
         return self.__dict__
