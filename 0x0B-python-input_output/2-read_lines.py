@@ -6,7 +6,7 @@ Contains the `read_lines` function
 
 def read_lines(filename="", nb_lines=0):
     """
-    reads n lines of a text file (UTF8) and prints it to stdout
+    Reads n lines of a text file (UTF8) and prints it to stdout
 
     Args:
         filename: the path to file to read+print
