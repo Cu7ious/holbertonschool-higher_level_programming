@@ -17,7 +17,8 @@ Summary
 10-class_to_json.py	 # returns the dictionary description with simple data structure
 			   (list, dictionary, string, integer and boolean) for JSON serialization of an object
 11-student.py		 # defines a Student class with to_json() method
-12-student.py		 # 
+12-student.py		 # defines a Student class with to_json() method
+			   that can return the attributes selected by user
 13-student.py		 #
 14-pascal_triangle.py	 #
 ```
