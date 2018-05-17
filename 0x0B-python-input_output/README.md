@@ -19,6 +19,7 @@ Summary
 11-student.py		 # defines a Student class with to_json() method
 12-student.py		 # defines a Student class with to_json() method
 			   that can return the attributes selected by user
-13-student.py		 #
+13-student.py		 # defines a Student class with reload_from_json() method
+			   that replaces all attributes of the Student instance
 14-pascal_triangle.py	 #
 ```
