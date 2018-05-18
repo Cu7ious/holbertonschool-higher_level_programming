@@ -21,5 +21,5 @@ Summary
 			   that can return the attributes selected by user
 13-student.py		 # defines a Student class with reload_from_json() method
 			   that replaces all attributes of the Student instance
-14-pascal_triangle.py	 #
+14-pascal_triangle.py	 # the implementation of a Pascal’s triangle
 ```
