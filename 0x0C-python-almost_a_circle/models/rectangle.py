@@ -14,8 +14,8 @@ class Rectangle(Base):
         Attrs:
             width: a width of a rectangle
             height: a height of a rectangle
-            x: the x coordinate
-            y: the y coordinate
+            x: a top padding
+            y: a bottom padding
             id: optional id
         """
         super().__init__(id)
@@ -44,6 +44,26 @@ class Rectangle(Base):
 
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    def update(self, *args):
+        """ updates the arguments of the instance
+
+        Args:
+            *args: variadic arguments list
+        """
+        for arg, c in zip(args, range(5)):
+            if c is 0:
+                self.id = arg
+            if c is 1:
+                self.width = arg
+            if c is 2:
+                self.height = arg
+            if c is 3:
+                self.x = arg
+            if c is 4:
+                self.y = arg
+            if c is None:
+                break
 
     @property
     def width(self):
