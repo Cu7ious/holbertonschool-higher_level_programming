@@ -7,6 +7,7 @@ from .base import Base
 class Rectangle(Base):
     """ The `Rectangle` class
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ The constructor of the `Rectangle` class
 
@@ -23,6 +24,12 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+
+    def __str__(self):
+        """ Prints the instance in human readable format
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                self.width, self.height)
 
     def area(self):
         """ Computes the area of a rectangle
