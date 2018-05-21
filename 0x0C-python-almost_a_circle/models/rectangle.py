@@ -45,25 +45,33 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ updates the arguments of the instance
 
         Args:
             *args: variadic arguments list
         """
-        for arg, c in zip(args, range(5)):
-            if c is 0:
-                self.id = arg
-            if c is 1:
-                self.width = arg
-            if c is 2:
-                self.height = arg
-            if c is 3:
-                self.x = arg
-            if c is 4:
-                self.y = arg
-            if c is None:
-                break
+        if len(kwargs) > 0:
+            for key, val in kwargs.items():
+                _key = key if key is "id" else "_Rectangle__{}".format(key)
+                if _key in self.__dict__:
+                    self.__dict__[_key] = val
+            return
+
+        if len(args) > 0:
+            for arg, c in zip(args, range(5)):
+                if c is 0:
+                    self.id = arg
+                if c is 1:
+                    self.width = arg
+                if c is 2:
+                    self.height = arg
+                if c is 3:
+                    self.x = arg
+                if c is 4:
+                    self.y = arg
+                if c is None:
+                    break
 
     @property
     def width(self):
