@@ -27,6 +27,26 @@ class Square(Rectangle):
                                                  self.x, self.y,
                                                  self.width)
 
+    def update(self, *args, **kwargs):
+        """ updates the arguments of the instance
+
+        Args:
+            *args: variadic arguments list
+            **kwargs: double pointer to a dictionary in key:val format
+        """
+        if len(args) > 0:
+            for arg, c in zip(args, range(5)):
+                if c is 0:
+                    self.id = arg
+                if c is 1:
+                    self.size = arg
+                if c is 2:
+                    self.x = arg
+                if c is 3:
+                    self.y = arg
+                if c is None:
+                    break
+
     @property
     def size(self):
         """ size getter
