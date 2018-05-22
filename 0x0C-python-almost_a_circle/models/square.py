@@ -55,6 +55,21 @@ class Square(Rectangle):
                 if _key in self.__dict__:
                     self.__dict__[_key] = val
 
+    def to_dictionary(self):
+        """ returns the dictionary representation
+            of a Square"""
+        res = {}
+        for key, val in self.__dict__.items():
+            key = key.replace("_Rectangle__", "")
+            key = "size" if key == "width" else key
+
+            if key == "height":
+                continue
+
+            res[key] = val
+
+        return res
+
     @property
     def size(self):
         """ size getter
