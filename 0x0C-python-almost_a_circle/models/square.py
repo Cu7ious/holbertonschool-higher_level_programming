@@ -47,6 +47,14 @@ class Square(Rectangle):
                 if c is None:
                     break
 
+            return  # ignore kwargs
+
+        if len(kwargs) > 0:
+            for key, val in kwargs.items():
+                _key = key if key is "id" else "_Rectangle__{}".format(key)
+                if _key in self.__dict__:
+                    self.__dict__[_key] = val
+
     @property
     def size(self):
         """ size getter
