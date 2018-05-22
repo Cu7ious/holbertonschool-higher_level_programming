@@ -47,7 +47,7 @@ class Base:
             for i in list_objs:
                 content.append(cls.to_dictionary(i))
 
-        with open(cls.__name__ + ".json", 'w') as a_file:
+        with open(cls.__name__ + ".json", "w", encoding="utf-8") as a_file:
             a_file.write(cls.to_json_string(content))
 
     @staticmethod
@@ -70,11 +70,29 @@ class Base:
             cls: the reference to the class
             dictionary: the double pointer to a dictionary
         """
+        if cls.__name__ is "Square":
+            temp = cls(42)  # can't be called without attributes
         if cls.__name__ is "Rectangle":
-            temp = cls(1, 1)
-        elif cls.__name__ is "Square":
-            temp = cls(1)
+            temp = cls(42, 42)  # can't be called without attributes
 
-        temp.update(**dictionary)
+        temp.update(**dictionary)  # pass the dictionary as a double pointer
 
         return temp
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances
+
+        Args:
+            cls: the reference to the class
+        """
+        try:
+            with open(cls.__name__ + ".json", "r", encoding="utf-8") as a_file:
+                content = cls.from_json_string(a_file.read())
+
+                for i in range(len(content)):
+                    content[i] = cls.create(**content[i])
+
+                return content
+        except:
+            return "[]"
