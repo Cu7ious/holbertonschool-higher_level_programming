@@ -28,8 +28,9 @@ class Rectangle(Base):
     def __str__(self):
         """ Prints the instance in human readable format
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
 
     def area(self):
         """ Computes the area of a rectangle
