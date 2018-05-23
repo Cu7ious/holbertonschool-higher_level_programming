@@ -84,7 +84,8 @@ class TestRectangleClass(unittest.TestCase):
 
     def test__str__(self):
         """ __str__"""
-        self.assertEqual(Rectangle(1, 1, 0, 0).__str__(), "[Rectangle] (1) 0/0 - 1/1")
+        self.assertEqual(Rectangle(1, 1, 0, 0).__str__(),
+                         "[Rectangle] (1) 0/0 - 1/1")
         Base._Base__nb_objects = 0
 
     def test_area(self):
