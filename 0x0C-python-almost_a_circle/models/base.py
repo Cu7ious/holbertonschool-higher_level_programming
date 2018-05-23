@@ -95,4 +95,4 @@ class Base:
 
                 return content
         except:
-            return "[]"
+            return []
