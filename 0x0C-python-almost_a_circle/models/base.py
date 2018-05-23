@@ -86,14 +86,15 @@ class Base:
         Args:
             cls: the reference to the class
         """
+        result = []
         try:
             with open(cls.__name__ + ".json", "r") as a_file:
                 content = cls.from_json_string(a_file.read())
 
-                result = []
                 for el in content:
                     result.append(cls.create(**el))
 
-                return result
         except Exception:
-            return []
+            pass
+
+        return result
