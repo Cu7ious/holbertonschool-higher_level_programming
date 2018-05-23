@@ -88,7 +88,8 @@ class Base:
         """
         try:
             with open(cls.__name__ + ".json", "r", encoding="utf-8") as a_file:
-                content = cls.from_json_string(a_file.read())
+                content = a_file.read()
+                content = cls.from_json_string(content)
 
                 for i in range(len(content)):
                     content[i] = cls.create(**content[i])
