@@ -2,7 +2,10 @@
 """ Tests for the `Rectangle` class"""
 import unittest
 import json
+
 import sys
+from contextlib import contextmanager
+from io import StringIO
 
 from models.base import Base
 from models.rectangle import Rectangle
@@ -10,6 +13,15 @@ from models.rectangle import Rectangle
 
 class TestRectangleClass(unittest.TestCase):
     """ Unit tests for the `Rectangle` class"""
+    @contextmanager
+    def captured_output(self):
+        new_out, new_err = StringIO(), StringIO()
+        old_out, old_err = sys.stdout, sys.stderr
+        try:
+            sys.stdout, sys.stderr = new_out, new_err
+            yield sys.stdout, sys.stderr
+        finally:
+            sys.stdout, sys.stderr = old_out, old_err
 
     def test_docstring(self):
         """ Docstring"""
@@ -139,7 +151,14 @@ class TestRectangleClass(unittest.TestCase):
         with open("Rectangle.json") as file:
             r1 = file.read()
             r2 = [temp1.to_dictionary(), temp2.to_dictionary()]
-            self.assertEqual(json.dumps(r2), r1)
+            self.assertEqual(r1, json.dumps(r2))
+        Base._Base__nb_objects = 0
+
+    def test_json_string_to_file_empty(self):
+        """ From json file empty"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json") as a_file:
+            self.assertEqual(json.loads(a_file.read()), [])
         Base._Base__nb_objects = 0
 
     def test_from_json(self):
@@ -223,4 +242,41 @@ class TestRectangleClass(unittest.TestCase):
     def test_class_basic_init(self):
         """ Ids"""
         self.assertEqual(Rectangle(1, 1).id, 1)
+        Base._Base__nb_objects = 0
+
+    def test_display_basic_square(self):
+        """ Print the instance"""
+        with self.captured_output() as (out, err):
+            Rectangle(2, 2).display()
+            # This can go inside or outside the `with` block
+            output = out.getvalue().strip()
+            self.assertEqual(output, "##\n##")
+        Base._Base__nb_objects = 0
+
+    def test_display_square_with_x(self):
+        """ Print the instance"""
+        with self.captured_output() as (out, err):
+            Rectangle(2, 2, 2).display()
+            # This can go inside or outside the `with` block
+            output = out.getvalue()
+            print(output)
+            self.assertEqual(output, "  ##\n  ##\n")
+        Base._Base__nb_objects = 0
+
+    def test_display_square_with_y(self):
+        """ Print the instance"""
+        with self.captured_output() as (out, err):
+            Rectangle(2, 2, 0, 2).display()
+            # This can go inside or outside the `with` block
+            output = out.getvalue()
+            self.assertEqual(output, "\n\n##\n##\n")
+        Base._Base__nb_objects = 0
+
+    def test_display_square_with_x_and_y(self):
+        """ Print the instance"""
+        with self.captured_output() as (out, err):
+            Rectangle(2, 2, 2, 2).display()
+            # This can go inside or outside the `with` block
+            output = out.getvalue()
+            self.assertEqual(output, "\n\n  ##\n  ##\n")
         Base._Base__nb_objects = 0

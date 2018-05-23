@@ -127,6 +127,13 @@ class TestSquareClass(unittest.TestCase):
             self.assertEqual(json.dumps(r2), r1)
         Base._Base__nb_objects = 0
 
+    def test_json_string_to_file_empty(self):
+        """ From json file empty"""
+        Square.save_to_file([])
+        with open("Square.json") as a_file:
+            self.assertEqual(json.loads(a_file.read()), [])
+        Base._Base__nb_objects = 0
+
     def test_from_json(self):
         """ From json"""
         temp1 = Square(1, 1, 1, 1)
@@ -207,5 +214,7 @@ class TestSquareClass(unittest.TestCase):
 
     def test_class_basic_init(self):
         """ Ids"""
-        self.assertEqual(Square(1, 1).id, 1)
+        self.assertEqual(Square(1).size, 1)
+        Base._Base__nb_objects = 0
+        self.assertEqual(Square(1, 2).x, 2)
         Base._Base__nb_objects = 0
