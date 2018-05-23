@@ -34,8 +34,8 @@ class Square(Rectangle):
             *args: variadic arguments list
             **kwargs: double pointer to a dictionary in key:val format
         """
-        if len(args) > 0:
-            for arg, c in zip(args, range(5)):
+        if len(args):
+            for c, arg in enumerate(args):
                 if c is 0:
                     self.id = arg
                 if c is 1:
@@ -44,12 +44,7 @@ class Square(Rectangle):
                     self.x = arg
                 if c is 3:
                     self.y = arg
-                if c is None:
-                    break
-
-            return  # ignore kwargs
-
-        if len(kwargs) > 0:
+        else:
             for key, val in kwargs.items():
                 _key = key if key is "id" else "_Rectangle__{}".format(key)
                 if _key in self.__dict__:
