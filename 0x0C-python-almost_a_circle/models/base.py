@@ -28,7 +28,7 @@ class Base:
         Args:
             list_dictionaries: the list of dictionaries
         """
-        if list_dictionaries is None or len(list_dictionaries) is 0:
+        if not list_dictionaries or len(list_dictionaries) is 0:
             return "[]"
 
         return json.dumps(list_dictionaries)
@@ -57,8 +57,8 @@ class Base:
         Args:
             json_string: string representing a list of dictionaries
         """
-        if json_string is None or json_string is "":
-            return "[]"
+        if not json_string:
+            return []
 
         return json.loads(json_string)
 
