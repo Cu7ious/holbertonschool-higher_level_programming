@@ -84,6 +84,8 @@ class Rectangle(Base):
             key = key.replace("_Rectangle__", "")
             res[key] = val
 
+        return res
+
     @property
     def width(self):
         return self.__width
