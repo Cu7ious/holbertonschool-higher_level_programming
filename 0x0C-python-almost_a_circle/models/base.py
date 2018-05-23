@@ -86,14 +86,12 @@ class Base:
         Args:
             cls: the reference to the class
         """
+        lists = []
         try:
-            with open(cls.__name__ + ".json", "r") as a_file:
-                content = cls.from_json_string(a_file.read())
-
-                result = []
-                for el in content:
-                    result.append(cls.create(**el))
-
-                return result
-        except:
-            return []
+            with open(cls.__name__ + ".json", "r", encoding="utf-8") as opened:
+                lists = cls.from_json_string(opened.read())
+            for i in range(len(lists)):
+                lists[i] = cls.create(**lists[i])
+            return lists
+        except Exception:
+            return lists
