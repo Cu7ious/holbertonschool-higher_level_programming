@@ -12,6 +12,9 @@ from models.square import Square
 
 class TestSquareClass(unittest.TestCase):
     """ Unit tests for the `Square` class"""
+    def setUp(self):
+        """ Hook that runs before each unit test"""
+        Base._Base__nb_objects = 0
 
     def test_docstring(self):
         """ Docstring"""
@@ -20,12 +23,10 @@ class TestSquareClass(unittest.TestCase):
     def test_is_instance(self):
         """ Is instance"""
         self.assertTrue(isinstance(Square(1, 1), Square))
-        Base._Base__nb_objects = 0
 
     def test_is_subclass(self):
         """ Is subclass"""
         self.assertTrue(issubclass(type(Square(1, 1)), Base))
-        Base._Base__nb_objects = 0
 
     def test_empty_init(self):
         """ Empty init"""
@@ -37,47 +38,39 @@ class TestSquareClass(unittest.TestCase):
             Square(0, 1)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square(-1, 1)
-        Base._Base__nb_objects = 0
 
     def test_width_is_not_int(self):
         """ Width is not int"""
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("1", 1)
-        Base._Base__nb_objects = 0
 
     def test_x_is_not_int(self):
         """ x is not int"""
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "1", -1)
-        Base._Base__nb_objects = 0
 
     def test_x_is_less_than_0(self):
         """ x is < 0"""
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(1, -1, -1)
-        Base._Base__nb_objects = 0
 
     def test_y_is_not_int(self):
         """ y is not int"""
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 1, "1")
-        Base._Base__nb_objects = 0
 
     def test_y_is_less_than_0(self):
         """ x is < 0"""
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(1, 0, -1)
-        Base._Base__nb_objects = 0
 
     def test__str__(self):
         """ __str__"""
         self.assertEqual(Square(1, 0, 0, 1).__str__(), "[Square] (1) 0/0 - 1")
-        Base._Base__nb_objects = 0
 
     def test_area(self):
         """ Area"""
         self.assertEqual(Square(2, 2, 0, 0).area(), 4)
-        Base._Base__nb_objects = 0
 
     def test_update_args(self):
         """ Update with args"""
@@ -88,7 +81,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(r.height, 2)
         self.assertEqual(r.x, 2)
         self.assertEqual(r.y, 2)
-        Base._Base__nb_objects = 0
 
     def test_update_kwargs(self):
         """ Update with kwargs"""
@@ -98,7 +90,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(r.size, 2)
         self.assertEqual(r.x, 2)
         self.assertEqual(r.y, 2)
-        Base._Base__nb_objects = 0
 
     def test_to_dictionary(self):
         """ to_dictionary"""
@@ -106,15 +97,6 @@ class TestSquareClass(unittest.TestCase):
         r1 = temp.to_dictionary()
         r2 = {"id": 1,  "size": 1, "x": 1, "y": 1}
         self.assertEqual(r1, r2)
-        Base._Base__nb_objects = 0
-
-    def test_to_json_string(self):
-        """ JSON string"""
-        temp = Square(1, 1, 1, 1)
-        r1 = temp.to_dictionary()
-        r2 = temp.to_json_string(r1)
-        self.assertEqual(r2, json.dumps(r1))
-        Base._Base__nb_objects = 0
 
     def test_json_string_to_file(self):
         """ From json file"""
@@ -125,14 +107,12 @@ class TestSquareClass(unittest.TestCase):
             r1 = file.read()
             r2 = [temp1.to_dictionary(), temp2.to_dictionary()]
             self.assertEqual(json.dumps(r2), r1)
-        Base._Base__nb_objects = 0
 
     def test_json_string_to_file_empty(self):
         """ From json file empty"""
         Square.save_to_file([])
         with open("Square.json") as a_file:
             self.assertEqual(json.loads(a_file.read()), [])
-        Base._Base__nb_objects = 0
 
     def test_from_json(self):
         """ From json"""
@@ -144,7 +124,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertTrue(isinstance(r2, str))
         r3 = Square.from_json_string(r2)
         self.assertTrue(isinstance(r3, list))
-        Base._Base__nb_objects = 0
 
     def test_create(self):
         """ Create method"""
@@ -153,7 +132,6 @@ class TestSquareClass(unittest.TestCase):
         r2 = Square.create(**dict1)
         self.assertFalse(r1 == r2)
         self.assertFalse(r1 is r2)
-        Base._Base__nb_objects = 0
 
     def test_load_from_file(self):
         """ Loading from json file"""
@@ -169,7 +147,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertTrue(isinstance(out[1], Square))
         self.assertEqual(str(r1), str(out[0]))
         self.assertEqual(str(r2), str(out[1]))
-        Base._Base__nb_objects = 0
 
     def test_return_empty(self):
         """ json_to_string returns none"""
@@ -215,6 +192,4 @@ class TestSquareClass(unittest.TestCase):
     def test_class_basic_init(self):
         """ Ids"""
         self.assertEqual(Square(1).size, 1)
-        Base._Base__nb_objects = 0
         self.assertEqual(Square(1, 2).x, 2)
-        Base._Base__nb_objects = 0
