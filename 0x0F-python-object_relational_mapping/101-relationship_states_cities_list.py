@@ -30,6 +30,6 @@ if __name__ == "__main__":
             print("{}: {}".format(state.id, state.name))
             current_state = state.name
 
-        print("\t{}: {}".format(city.id, city.name))
+        print("    {}: {}".format(city.id, city.name))
 
     session.close()
