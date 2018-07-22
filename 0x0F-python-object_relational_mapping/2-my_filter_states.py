@@ -17,14 +17,13 @@ if __name__ == "__main__":
     passwd = argv[2]
     db = argv[3]
     name = argv[4]
-    query = '''SELECT * FROM states \
-                    WHERE name="{:s}" \
-                    ORDER BY id'''.format(name)
 
     connection = MySQLdb.connect(host, user, passwd, db, port)
     cursor = connection.cursor()
 
-    cursor.execute(query)
+    cursor.execute(("SELECT * FROM states "
+                    "WHERE name='{:s}' "
+                    "ORDER BY id".format(name)))
 
     rows = cursor.fetchall()
     connection.close()
