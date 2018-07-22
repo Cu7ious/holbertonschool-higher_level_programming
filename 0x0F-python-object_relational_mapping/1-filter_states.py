@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-import MySQLdb
-from sys import argv as argv
 """ lists all states with a name starting with N (upper N)
     from the database hbtn_0e_0_usa
 """
 
 if __name__ == "__main__":
+    from sys import argv as argv
+
     if len(argv) < 4:
         print("Error: this script requires 3 arguments")
         exit()
+
+    import MySQLdb
 
     host = "localhost"
     port = 3306
@@ -24,5 +26,5 @@ if __name__ == "__main__":
     connection.close()
 
     for row in rows:
-        if row[1][0] == 'N':
+        if row[1][0] == "N":
             print(row)
