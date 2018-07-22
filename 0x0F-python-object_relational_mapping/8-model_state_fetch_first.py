@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all State objects from the database hbtn_0e_6_usa
+""" Prints the first State object from the database hbtn_0e_6_usa
 """
 if __name__ == "__main__":
     from sys import argv
