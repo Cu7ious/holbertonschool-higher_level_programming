@@ -4,11 +4,6 @@
 """
 if __name__ == "__main__":
     from sys import argv as argv
-
-    if len(argv) < 5:
-        print("Error: this script requires 4 arguments")
-        exit()
-
     import MySQLdb
 
     host = "localhost"
