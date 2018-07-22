@@ -22,14 +22,12 @@ if __name__ == "__main__":
 
     session = Session()
 
-    query = session.query(State, City).join(City).order_by(State.id, City.id)
+    query = session.query(State).join(City).order_by(State.id, City.id)
 
-    current_state = ""
-    for state, city in query.all():
-        if current_state != state.name:
-            print("{}: {}".format(state.id, state.name))
-            current_state = state.name
-
-        print("    {}: {}".format(city.id, city.name))
+    # print(query.all())
+    for state in query.all():
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
 
     session.close()
