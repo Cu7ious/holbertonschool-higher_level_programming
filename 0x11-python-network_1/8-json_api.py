@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         query = ""
     try:
-        url = "http://172.31.54.208:39995/search_user"
+        url = "http://0.0.0.0:5000/search_user"
         data = {"q": query}
         res = requests.post(url, data=data)
 
