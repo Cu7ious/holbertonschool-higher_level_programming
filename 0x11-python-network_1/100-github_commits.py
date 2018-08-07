@@ -14,7 +14,6 @@ if __name__ == "__main__":
     res = requests.get(url + query)
     res = res.json()
 
-
     for num, commit in enumerate(res):
         if num == 10:
             break
