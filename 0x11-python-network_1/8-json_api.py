@@ -1,23 +1,23 @@
 #!/usr/bin/python3
+""" Send a post request to an ip
 """
-Send a post request to an ip
-"""
-
 import requests
-from sys import argv
+import sys
+
 
 if __name__ == "__main__":
-    if len(argv) > 1:
-        q = argv[1]
+    if len(sys.argv) > 1:
+        query = sys.argv[1]
     else:
-        q = ""
+        query = ""
     try:
-        inputs = {'q': q}
-        r = requests.post("http://0.0.0.0:5000/search_user", data=inputs)
+        url = "http://172.31.54.208:39995/search_user"
+        data = {"q": query}
+        res = requests.post(url, data=data)
 
-        dic = r.json()
-        if "name" in dic and "id" in dic:
-            print("[{}] {}".format(dic["id"], dic["name"]))
+        user = res.json()
+        if "name" in user and "id" in user:
+            print("[{}] {}".format(user["id"], user["name"]))
         else:
             print("No result")
     except ValueError:
