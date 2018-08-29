@@ -11,7 +11,7 @@ exports.callMeMoby = function (x, theFunction) {
     return NaN;
   }
 
-  while (x) {
+  while (x > 0) {
     if (typeof theFunction === 'function') {
       theFunction.call();
       --x;
