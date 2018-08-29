@@ -9,8 +9,10 @@
 module.exports = {
   callMeMoby: function (x, theFunction) {
     while (x) {
-      theFunction.call();
-      --x;
+      if (typeof theFunction === 'function') {
+        theFunction.call();
+        --x;
+      }
     }
   }
 };
