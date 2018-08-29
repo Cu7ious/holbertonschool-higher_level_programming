@@ -8,10 +8,16 @@
  */
 module.exports = {
   callMeMoby: function (x, theFunction) {
+    if (isNaN(Number(x))) {
+      return NaN;
+    }
+
     while (x) {
       if (typeof theFunction === 'function') {
         theFunction.call();
         --x;
+      } else {
+        return;
       }
     }
   }
