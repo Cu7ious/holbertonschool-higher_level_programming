@@ -6,7 +6,7 @@
  * Prototype: function (x, theFunction)
  * @NB: You are not allowed to use var
  */
-exports.callMeMoby: function (x, theFunction) {
+exports.callMeMoby = function (x, theFunction) {
   if (isNaN(Number(x))) {
     return NaN;
   }
