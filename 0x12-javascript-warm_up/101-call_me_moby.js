@@ -6,19 +6,17 @@
  * Prototype: function (x, theFunction)
  * @NB: You are not allowed to use var
  */
-module.exports = {
-  callMeMoby: function (x, theFunction) {
-    if (isNaN(Number(x))) {
-      return NaN;
-    }
+exports.callMeMoby: function (x, theFunction) {
+  if (isNaN(Number(x))) {
+    return NaN;
+  }
 
-    while (x) {
-      if (typeof theFunction === 'function') {
-        theFunction.call();
-        --x;
-      } else {
-        return;
-      }
+  while (x) {
+    if (typeof theFunction === 'function') {
+      theFunction.call();
+      --x;
+    } else {
+      return;
     }
   }
 };
