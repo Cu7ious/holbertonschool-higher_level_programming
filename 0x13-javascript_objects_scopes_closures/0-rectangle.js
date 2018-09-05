@@ -1,3 +1,3 @@
 #!/usr/bin/node
-/* Creates the Rectangle class*/
+/* Creates the Rectangle class */
 module.exports = class Rectangle {};
