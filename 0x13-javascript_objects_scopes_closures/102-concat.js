@@ -16,6 +16,5 @@ fs.readFile(process.argv[2], (err, data1) => {
     fs.writeFile(process.argv[4], result, (err) => {
       if (err) throw err;
     });
-
   });
 });
